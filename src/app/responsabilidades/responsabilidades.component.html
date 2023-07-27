@@ -1,0 +1,8 @@
+<div class="responsabilidades">
+  <mat-list>
+    <mat-list-item *ngFor="let checkbox of checkboxes">
+      <mat-checkbox [(ngModel)]="checkbox.checked">{{ checkbox.label | uppercase}}</mat-checkbox>
+    </mat-list-item>
+  </mat-list>
+  <button class="btn" mat-raised-button color="primary" (click)="openModal()">Agregar Responsabilidad</button>
+</div>

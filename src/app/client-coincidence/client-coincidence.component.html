@@ -1,0 +1,17 @@
+<p>Hola</p>
+<div class="app-modal-container">
+    <h1 class="app-modal-label">{{data.title}}</h1>
+    <div class="app-modal-content">
+        <p>{{data.description}}</p>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="clientRadio">
+            <mat-radio-button class="example-radio-button" color="primary" *ngFor="let client of clientsCoincidences" [value]="client">
+                {{client.nombres}}
+            </mat-radio-button>
+        </mat-radio-group>
+        <p>{{data.description2}}</p>
+    </div>
+    <div class="app-modal-actions">
+        <button mat-stroked-button color="primary" mat-dialog-close (click)="CreateNewClient()">Crear Nuevo</button>
+        <button mat-flat-button color="primary" [disabled]="!clientRadio" (click)="selLoadClient()">Seleccionar y Cargar</button>
+    </div>
+</div>

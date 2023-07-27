@@ -1,0 +1,106 @@
+<h1 mat-dialog-title>REGISTRO FACTURACIÓN</h1>
+<form class="form-group">
+
+    <mat-form-field class="billing-form-field">
+        <mat-label>
+            Razon social
+        </mat-label>
+        <input matInput placeholder="Insertar nombre">
+    </mat-form-field>
+
+    <mat-form-field class="billing-form-field">
+        <mat-label>
+            NIT
+        </mat-label>
+        <input matInput placeholder="Insertar nit">
+    </mat-form-field>
+
+    <mat-form-field class="billing-form-field">
+        <mat-label>
+            Municipio
+        </mat-label>
+        <input matInput placeholder="Municipio">
+    </mat-form-field>
+
+    <mat-form-field class="billing-form-field">
+        <mat-label>
+            <mat-icon>phone</mat-icon>
+        </mat-label>
+        <input matInput placeholder="Insertar numeros">
+    </mat-form-field>
+
+    <mat-form-field class="billing-form-field">
+        <mat-label>
+            <mat-icon>phonelink_ring</mat-icon>
+        </mat-label>
+        <input matInput placeholder="Insertar numeros">
+    </mat-form-field>
+
+    <mat-form-field  class="billing-form-field">
+        <mat-label>
+            Resolución
+        </mat-label>
+        <input matInput placeholder="Insertar texto">
+    </mat-form-field>
+
+    <mat-form-field class="date-form-field">
+        <mat-label>Fecha resolucion</mat-label>
+        <input matInput [matDatepicker]="datepicker">
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+        </mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="date-form-field">
+        <mat-label>Vigencia</mat-label>
+        <input matInput [matDatepicker]="datepicker">
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+        </mat-datepicker>
+    </mat-form-field>
+
+    <mat-label>Rango Autorizado</mat-label>
+
+    <mat-form-field class="billing-form-field">
+      <mat-label>
+          Prefijo
+      </mat-label>
+      <input matInput placeholder="Insertar texto">
+  </mat-form-field>
+
+  <mat-form-field class="billing-form-field">
+    <mat-label>
+        Desde
+    </mat-label>
+    <input matInput placeholder="Insertar numero">
+</mat-form-field>
+
+<mat-form-field class="billing-form-field">
+  <mat-label>
+      Hasta
+  </mat-label>
+  <input matInput placeholder="Insertar numero">
+    </mat-form-field>
+
+</form>
+
+<!--Responsabilidades tributarias-->
+<div class="responsabilidades">
+    <h1 style="text-align: start;" mat-dialog-title>RESPONSABILIDADES TRIBUTARIAS</h1>
+
+    <div align="left" class="res">
+         <app-responsabilidades></app-responsabilidades>
+    </div>
+
+    <div mat-dialog-actions align="end">
+        <button mat-raised-button (click)="backFunction()">Cerrar</button>
+        <button mat-raised-button color="primary" (click)="saveFunction()">Guardar</button>
+    </div>

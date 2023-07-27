@@ -1,0 +1,136 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxFlexAlign="auto" fxflex="10%">
+        <!-- <button mat-icon-button fxflex="50%" > -->
+        <mat-icon color="primary" (click)="billingConfigure();" title="Configuracion de Facturacion">settings</mat-icon>
+        <!-- </button> -->
+    </div>
+    <div fxFlexAlign="auto" fxflex="90%">
+        <h1>Centro de Facturación</h1>
+    </div>
+</div>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Informacion Facturacion
+            </mat-panel-title>
+            <mat-panel-description>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Cliente</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="comboCli" type="text" placeholder="Cliente" aria-label="Number" (ngModelChange)="setIdAutocompleteC(c)" (keypress)="preventSpecial($event,true,false,false,true,false, true)" [(ngModel)]="clientSelCombo" [formControl]="myControl" [matAutocomplete]="autoC"
+                            style="text-transform:uppercase; font:caption;" [disabled]="(id_client == -1)?false:true">
+                        <mat-autocomplete #autoC="matAutocomplete" [displayWith]="displayFn.bind(this)">
+                            <mat-option *ngFor="let c of filterClients | async" [value]="c">
+                                {{c.nombre_completo}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+                <div *ngIf="prospect_get">
+                    <h4>{{prospect_get.nombre_completo_cliente}}</h4>
+                </div>
+                <!-- <mat-list *ngIf="prospect_get" role="list">
+                    <mat-list-item *ngFor="let construct of comboObras">
+                        {{construct.nombre}}
+                        <button mat-button mat-icon-button fxFlex="50%" (click)="billingConstrucConfigure()" title="Configuracion Facturacion de Obra">
+                        <mat-icon color="primary">settings</mat-icon>
+                    </button>
+                    </mat-list-item>
+                </mat-list> -->
+
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let construct of comboObras" class="grid5">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{construct.nombre}}
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                <!-- <button mat-button mat-icon-button fxFlex="20%" (click)="billingConstrucConfigure()" title="Configuracion Facturacion de Obra"> -->
+                                <mat-icon color="primary" (click)="billingConstrucConfigure()" title="Configuracion Facturacion de Obra">settings</mat-icon>
+                                <!-- </button> -->
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-card-content>
+                            <!-- <div style="max-width: 650px; overflow-x: auto; white-space: nowrap;"> -->
+                            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                                <ng-container matColumnDef="confirmation">
+                                    <th mat-header-cell *matHeaderCellDef> Confirmación </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.confirmation}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="billingNumber">
+                                    <th mat-header-cell *matHeaderCellDef> Factura </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.billingNumber}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="utility">
+                                    <th mat-header-cell *matHeaderCellDef> Utilidad </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.utility}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="subtotal">
+                                    <th mat-header-cell *matHeaderCellDef> Subtotal </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.subtotal}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="iva">
+                                    <th mat-header-cell *matHeaderCellDef> IVA </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.iva}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="total">
+                                    <th mat-header-cell *matHeaderCellDef> Total </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="retentions">
+                                    <th mat-header-cell *matHeaderCellDef> Retenciones </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.retentions}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="neto">
+                                    <th mat-header-cell *matHeaderCellDef> Neto </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.neto}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="settings">
+                                    <th mat-header-cell *matHeaderCellDef> </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <mat-icon [color]="element.billingNumber ? 'primary' : 'success'" (click)="billing(element.confirmation)" title="Factura">settings</mat-icon>
+                                        <mat-icon [color]="element.billingNumber ? 'primary' : 'success'" (click)="creditNote(element.confirmation)" title="Nota Crédito">business</mat-icon>
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="constructionColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: constructionColumns;"></tr>
+                            </table>
+                            <!-- </div> -->
+                        </mat-card-content>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-card-content>
+
+            <mat-card-actions align="end">
+                <button mat-icon-button fxFlex="50%" (click)="cargar('c',1)" title="Cargar Cliente">
+          <mat-icon color="primary">input</mat-icon>
+        </button>
+
+                <button mat-icon-button fxFlex="50%" (click)="this.cleanCliSel('R');">
+          <mat-icon color="warn">youtube_searched_for</mat-icon>
+        </button>
+                <!--
+                <button mat-button mat-icon-button fxFlex="50%" (click)="addNewClient();$event.preventDefault()">
+        <mat-icon style="color:green">add</mat-icon>
+    </button> -->
+            </mat-card-actions>
+        </mat-card>
+    </mat-expansion-panel>
+</mat-accordion>

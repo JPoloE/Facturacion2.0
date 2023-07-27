@@ -1,0 +1,158 @@
+<div class="titulo">
+  <h1>REGISTRO FACTURACION</h1>
+</div>
+
+<div class="formulario">
+  <mat-form-field>
+    <mat-label>TIPO</mat-label>
+    <mat-select [(value)]="selectedOption"
+      (selectionChange)="onOptionSelected()">
+      <mat-option value="Persona Natural">Persona Natural</mat-option>
+      <mat-option value="Persona Juridica">Persona Juridica</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+
+  <!-- Formulario para personas juridicas -->
+
+  <ng-container *ngIf="selectedOption === 'Persona Juridica'">
+    <mat-form-field style="margin-right: 20px;">
+      <input matInput placeholder="*Razon Social">
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Juridica'">
+    <mat-form-field>
+      <input matInput placeholder="*NIT">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Juridica'">
+    <mat-form-field>
+      <input matInput placeholder="*Correo Fact">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Juridica'">
+    <mat-form-field style="margin-right: 20px;">
+      <mat-label>Municipio</mat-label>
+      <mat-select>
+        <mat-option value="Baranquilla">Barranquilla</mat-option>
+        <mat-option value="Cartagena">Cartagena</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Juridica'">
+    <mat-form-field>
+      <input matInput placeholder="*Direccion">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Juridica'">
+    <mat-form-field style="margin-right: 20px;">
+      <input matInput placeholder="*Telefono">
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Juridica'">
+    <mat-form-field>
+      <input matInput placeholder="*Celular">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Juridica'">
+    <mat-form-field>
+      <input matInput placeholder="Contacto">
+    </mat-form-field><br>
+  </ng-container>
+
+  <!-- Formulario para personas naturales -->
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field style="margin-right: 20px;">
+      <input matInput placeholder="Nombres">
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field>
+      <input matInput placeholder="Apellidos">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field style="margin-right: 20px;">
+      <mat-label>Tipo de Documento</mat-label>
+      <mat-select>
+        <mat-option value="Cedula de ciudadania">Cedula de ciudadania</mat-option>
+        <mat-option value="Cedula de extranjeria">Cedula de extranjeria</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field>
+      <input matInput placeholder="Numero de documento">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field>
+      <input type="email" [formControl]="emailFormControl"
+        [errorStateMatcher]="matcher" matInput placeholder="Correo">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field style="margin-right: 20px;">
+      <mat-label>Municipio</mat-label>
+      <mat-select>
+        <mat-option value="Baranquilla">Barranquilla</mat-option>
+        <mat-option value="Cartagena">Cartagena</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field>
+      <input matInput placeholder="*Direccion">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field style="margin-right: 20px;">
+      <input matInput placeholder="*Telefono">
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field>
+      <input class="long-input" matInput placeholder="*Celular">
+    </mat-form-field><br>
+  </ng-container>
+
+  <ng-container *ngIf="selectedOption === 'Persona Natural'">
+    <mat-form-field>
+      <textarea matInput placeholder="Contacto"></textarea>
+    </mat-form-field><br>
+  </ng-container>
+
+  <!-- Responsabilidades tributarias -->
+  <div class="responsabilidades">
+    <h2>Responsabilidades Tributarias</h2>
+    <app-responsabilidades></app-responsabilidades>
+  </div>
+
+  <!-- Configuracion UTV -->
+  <div class="utv">
+    <h2 mat-title>CONFIGURACION UTV</h2>
+  </div>
+
+</div>
+
+<!-- Botones de opcion -->
+<div class="buttons">
+  <button class="cerrar" mat-dialog-close mat-raised-button color="warn">Cerrar</button>
+  <button class="guardar" mat-raised-button color="primary">guardar</button>
+</div>

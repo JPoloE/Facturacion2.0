@@ -1,0 +1,47 @@
+:host {
+    display: block;
+    margin: 1rem;
+    max-height: 100vh; /* Establece una altura máxima para el modal */
+  }
+  
+  .titulo {
+    height: 50px;
+  }
+  
+  .formulario {
+    margin-top: 20px; 
+
+  }
+  
+  .responsabilidades {
+    height: 350px;
+  }
+
+  .long-input {
+    width: 300px; /* Ajusta el valor del ancho según tus necesidades */
+  }
+
+  h1, h2{
+    border-bottom: 1px solid #7603A8;
+  }
+  
+  h1 {
+    margin-left: 10px;
+    
+  }
+  
+  h2 {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .guardar{
+
+    margin-bottom: 20px;
+  }
+
+  .cerrar{
+    margin-left: 58%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }

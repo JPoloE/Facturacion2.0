@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Factura</h1>
+<form class="form-group">
+    <mat-form-field class="billing-form-field">
+        <mat-label>
+            Factura
+        </mat-label>
+        <input matInput placeholder="# factura">
+    </mat-form-field>
+    <mat-form-field class="date-form-field">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="datepicker">
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+        </mat-datepicker>
+    </mat-form-field>
+    <div mat-dialog-actions align="end">
+        <button mat-raised-button (click)="backFunction()">Atrás</button>
+        <button mat-raised-button color="primary" (click)="saveFunction()">Guardar</button>
+    </div>
+</form>

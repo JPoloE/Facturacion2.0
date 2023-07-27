@@ -1,0 +1,72 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.billing-container {
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    overflow: hidden;
+    height: 710px;
+    .billing-label-container {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        .prospectos-label {
+            color: #008080;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+    .fechas-ami-container,
+    .buttons-search-container {
+        align-items: center;
+        margin: 0 20px;
+        .fechas-ami-container,
+        .fechas-container {
+            align-items: center;
+        }
+    }
+    .search-propesto {
+        margin-top: 10px;
+    }
+}
+
+.client-full-width {
+    width: 100%;
+}
+
+.client-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.mat-mdc-form-field+.mat-mdc-form-field {
+    margin-left: 8px;
+}
+
+table {
+    width: 100%;
+}
