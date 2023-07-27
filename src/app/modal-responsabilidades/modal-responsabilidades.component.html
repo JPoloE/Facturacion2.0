@@ -1,13 +1,17 @@
 <div class="modal">
-  <h2>Modal de Responsabilidades</h2>
+  <h2>AGREGAR RESPONSABILIDADES</h2>
   <mat-list>
     <mat-list-item *ngFor="let checkbox of checkboxes">
-      <mat-checkbox [(ngModel)]="checkbox.checked">{{ checkbox.label }}</mat-checkbox>
+      <mat-checkbox [(ngModel)]="checkbox.checked">{{ checkbox.label |
+        uppercase}}</mat-checkbox>
     </mat-list-item>
   </mat-list>
   <mat-form-field>
-    <input matInput [(ngModel)]="newCheckboxName" placeholder="Nombre del nuevo checkbox">
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="addNewCheckbox()">Agregar nuevo checkbox</button>
-  <button mat-raised-button color="accent" (click)="saveChanges()">Guardar</button>
+    <input matInput [(ngModel)]="newCheckboxName"
+      placeholder="Responsabilidad">
+  </mat-form-field><br>
+  <button class="btn" mat-raised-button color="primary"
+    (click)="addNewCheckbox()">Agregar Responsabilidad</button>
+  <button style="margin-left: 30px;" class="btn" mat-raised-button
+    color="accent" (click)="saveChanges()">Guardar</button>
 </div>

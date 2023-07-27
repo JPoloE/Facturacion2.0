@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DataSharingService } from '../services/data-sharing.service';
 import { ModalResponsabilidadesComponent } from '../modal-responsabilidades/modal-responsabilidades.component';
+import { DialogConfig } from '@angular/cdk/dialog';
 
 
 @Component({
