@@ -32,6 +32,8 @@ import { BillingConfigurationComponent } from './billing-configuration/billing-c
 import { ConstructionBillingConfigurationComponent } from './construction-billing-configuration/construction-billing-configuration.component';
 import { ResponsabilidadesComponent } from './responsabilidades/responsabilidades.component';
 import { ModalResponsabilidadesComponent } from './modal-responsabilidades/modal-responsabilidades.component';
+import { HistorialComponent } from './historial/historial.component';
+import { RetencionesComponent } from './retenciones/retenciones.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { ModalResponsabilidadesComponent } from './modal-responsabilidades/modal
     ConstructionBillingConfigurationComponent,
     ResponsabilidadesComponent,
     ModalResponsabilidadesComponent,
+    HistorialComponent,
+    RetencionesComponent,
   ],
   imports: [
     BrowserModule,

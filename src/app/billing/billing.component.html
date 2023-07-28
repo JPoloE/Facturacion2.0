@@ -36,7 +36,7 @@
         <input matInput placeholder="Insertar numeros">
     </mat-form-field>
 
-    <mat-form-field  class="billing-form-field">
+    <mat-form-field class="billing-form-field">
         <mat-label>
             Resolución
         </mat-label>
@@ -67,40 +67,48 @@
         </mat-datepicker>
     </mat-form-field>
 
-    <mat-label>Rango Autorizado</mat-label>
+    <mat-label style="margin-left: 10px;">Rango Autorizado</mat-label>
 
     <mat-form-field class="billing-form-field">
-      <mat-label>
-          Prefijo
-      </mat-label>
-      <input matInput placeholder="Insertar texto">
-  </mat-form-field>
+        <mat-label>
+            Prefijo
+        </mat-label>
+        <input matInput placeholder="Insertar texto">
+    </mat-form-field>
 
-  <mat-form-field class="billing-form-field">
-    <mat-label>
-        Desde
-    </mat-label>
-    <input matInput placeholder="Insertar numero">
-</mat-form-field>
+    <mat-form-field class="billing-form-field">
+        <mat-label>
+            Desde
+        </mat-label>
+        <input matInput placeholder="Insertar numero">
+    </mat-form-field>
 
-<mat-form-field class="billing-form-field">
-  <mat-label>
-      Hasta
-  </mat-label>
-  <input matInput placeholder="Insertar numero">
+    <mat-form-field class="billing-form-field">
+        <mat-label>
+            Hasta
+        </mat-label>
+        <input matInput placeholder="Insertar numero">
     </mat-form-field>
 
 </form>
 
 <!--Responsabilidades tributarias-->
 <div class="responsabilidades">
-    <h1 style="text-align: start;" mat-dialog-title>RESPONSABILIDADES TRIBUTARIAS</h1>
+    <h1 style="text-align: start;" mat-dialog-title>RESPONSABILIDADES
+        TRIBUTARIAS</h1>
 
     <div align="left" class="res">
-         <app-responsabilidades></app-responsabilidades>
+        <app-responsabilidades></app-responsabilidades>
     </div>
 
-    <div mat-dialog-actions align="end">
-        <button mat-raised-button (click)="backFunction()">Cerrar</button>
-        <button mat-raised-button color="primary" (click)="saveFunction()">Guardar</button>
-    </div>
+</div>
+
+<!-- Configuracion UTV -->
+<div class="utv">
+    <h2 mat-dialog-title>CONFIGURACION UTV</h2>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-raised-button (click)="backFunction()">Cerrar</button>
+    <button mat-raised-button color="primary" (click)="saveFunction()">Guardar</button>
+</div>

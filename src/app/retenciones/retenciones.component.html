@@ -1,0 +1,121 @@
+<h1 mat-dialog-title>Retenciones</h1>
+
+<!--Retenciones en la fuente-->
+
+<h1 mat-dialog-title>Retecion en la fuente</h1>
+
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field class="form">
+        <input matInput placeholder="Subtotal base de retencion"
+            [formControl]="input1">
+    </mat-form-field><br>
+
+    <mat-form-field class="form">
+        <mat-label>Escoger concepto de retencion</mat-label>
+        <mat-select
+            (selectionChange)="onComboBox1Change($event)">
+            <mat-option *ngFor="let option of comboBox1Options" [value]="option">{{
+                option }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <input matInput placeholder="Tarifa Retencion" [formControl]="input2">
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <input matInput placeholder="Base de retencion" [formControl]="input3">
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <input matInput placeholder="Vr. Total Retecion" [formControl]="input4">
+    </mat-form-field>
+
+    <button class="btn" color="primary" mat-icon-button
+        aria-label="Agregar">
+        <mat-icon>add</mat-icon>
+    </button>
+</form>
+
+<!--Rete Ica-->
+
+<h1 mat-dialog-title>Rete ICA</h1>
+
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field class="form">
+        <input matInput placeholder="Subtotal base de retencion"
+            [formControl]="input1">
+    </mat-form-field><br>
+
+    <mat-form-field class="form">
+        <mat-label>Escoger concepto de retencion</mat-label>
+        <mat-select
+            (selectionChange)="onComboBox1Change($event)">
+            <mat-option *ngFor="let option of comboBox1Options" [value]="option">{{
+                option }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <input matInput placeholder="Tarifa Retencion" [formControl]="input2">
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <input matInput placeholder="Base de retencion" [formControl]="input3">
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <input matInput placeholder="Vr. Total Retecion" [formControl]="input4">
+    </mat-form-field>
+
+    <button class="btn" color="primary" mat-icon-button
+        aria-label="Agregar">
+        <mat-icon>add</mat-icon>
+    </button>
+</form>
+
+<!--Rete iva-->
+
+<h1 mat-dialog-title>Rete IVA</h1>
+
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field class="form">
+        <input matInput placeholder="Subtotal base de retencion"
+            [formControl]="input1">
+    </mat-form-field><br>
+
+    <mat-form-field class="form">
+        <mat-label>Escoger concepto de retencion</mat-label>
+        <mat-select
+            (selectionChange)="onComboBox1Change($event)">
+            <mat-option *ngFor="let option of comboBox1Options" [value]="option">{{
+                option }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <input matInput placeholder="Tarifa Retencion" [formControl]="input2">
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <input matInput placeholder="Base de retencion" [formControl]="input3">
+    </mat-form-field>
+
+    <mat-form-field style="width: 80px;" class="form">
+        <input matInput placeholder="% IVA" [formControl]="input3">
+    </mat-form-field>
+
+    <mat-form-field style="width: 180px;" class="form">
+        <input matInput placeholder="Vr. Total Retecion" [formControl]="input4">
+    </mat-form-field>
+
+    <button class="btn" mat-icon-button color="primary"
+        aria-label="Agregar">
+        <mat-icon>add</mat-icon>
+    </button>
+
+    <div class="btns">
+        <button mat-raised-button color="primary">Guardar</button>
+        <button style="margin-left: 10px;" mat-raised-button color="warn">Cerrar</button>
+    </div>
+</form>

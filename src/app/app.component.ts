@@ -16,6 +16,8 @@ import {MatAccordion} from '@angular/material/expansion';
 import { BillingRegisterComponent } from './billing-register/billing-register.component';
 import { CreditNoteRegisterComponent } from './credit-note-register/credit-note-register.component';
 import { ConstructionBillingConfigurationComponent } from './construction-billing-configuration/construction-billing-configuration.component';
+import { HistorialComponent } from './historial/historial.component';
+import { RetencionesComponent } from './retenciones/retenciones.component';
 
 const BILLING_DATA: Ibilling[] = [
   {billingNumber: 'FE450', date: '17/05/2023', construction: "", confirmation: "CF0010-19", utility: 874990, subtotal: 12031118, iva: 166248, total: 13072356, retentions: 386308, neto: 12686048, creditNote:true},
@@ -536,6 +538,49 @@ export class AppComponent implements OnInit {
       }
     );
   }
+
+  history(confirmation: string){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '350px';
+    dialogConfig.height = '300px';
+    dialogConfig.panelClass = 'custom-modal';
+    dialogConfig.data = {
+      id: 1,
+      title: 'Historial',
+    }
+
+    const dialogRef = this.dialog.open(HistorialComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+      async (data: { cliente: any; }) => {
+        console.log("Historial");
+      }
+    );
+  }
+
+  retenciones(confirmation: string){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '1400px';
+    dialogConfig.height = '600px';
+    dialogConfig.panelClass = 'custom-modal';
+    dialogConfig.data = {
+      id: 1,
+      title: 'Retenciones',
+    }
+
+    const dialogRef = this.dialog.open(RetencionesComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+      async (data: { cliente: any; }) => {
+        console.log("Retenciones");
+      }
+    );
+  }
+
 }
 
 
