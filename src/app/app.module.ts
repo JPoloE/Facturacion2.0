@@ -34,6 +34,7 @@ import { ResponsabilidadesComponent } from './responsabilidades/responsabilidade
 import { ModalResponsabilidadesComponent } from './modal-responsabilidades/modal-responsabilidades.component';
 import { HistorialComponent } from './historial/historial.component';
 import { RetencionesComponent } from './retenciones/retenciones.component';
+import { UtvComponent } from './utv/utv.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { RetencionesComponent } from './retenciones/retenciones.component';
     ModalResponsabilidadesComponent,
     HistorialComponent,
     RetencionesComponent,
+    UtvComponent,
   ],
   imports: [
     BrowserModule,

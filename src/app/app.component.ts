@@ -151,7 +151,7 @@ export class AppComponent implements OnInit {
     this.api.ObtenerClientes(parametros.id, parametros.idEst)
       .subscribe((data: any) => {
         this.comboClients = data;
-        //console.log(this.comboClients);
+        console.log(this.comboClients);
       });
       console.log("linea 139");
     this.searchConstructions(this.prospect_get.id_cliente);
@@ -213,7 +213,7 @@ export class AppComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '720px';
-    dialogConfig.height = '850px';
+    dialogConfig.height = '600px';
     dialogConfig.panelClass = 'custom-modal';
     dialogConfig.data = {
       id: 1,
@@ -247,7 +247,7 @@ export class AppComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(
        async (data: { cliente: any; }) => {
-         console.log("Registro facturador");
+         console.log("Registro facturacion");
        }
      );
 

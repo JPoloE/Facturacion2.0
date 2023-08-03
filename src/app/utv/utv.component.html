@@ -1,0 +1,106 @@
+<mat-form-field class="billing-form-field">
+    <mat-label>
+        Año
+    </mat-label>
+    <input matInput placeholder="Insertar año">
+</mat-form-field>
+
+<mat-form-field class="billing-form-field">
+    <mat-label>
+        Vr. UVT
+    </mat-label>
+    <input matInput placeholder="Insertar valor">
+</mat-form-field>
+
+<div class="table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container style="text-align: center;" matColumnDef="year">
+            <th style="text-align: center;" mat-header-cell *matHeaderCellDef>
+                Año </th>
+            <td style="text-align: center;" mat-cell *matCellDef="let element">
+                {{element.year}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="uvt">
+            <th style="text-align: center;" mat-header-cell *matHeaderCellDef>
+                UVT </th>
+            <td style="text-align: center;" mat-cell *matCellDef="let element">
+                {{element.uvt}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+
+<!--Retencion en la fuente-->
+<div class="retencion-fuerte">
+    <h2 mat-dialog-title>Retencion en la fuente</h2>
+    <div class="tabler">
+        <mat-table [dataSource]="datar" class="mat-elevation-z8">
+            <!-- Position Column -->
+            <ng-container matColumnDef="conceptos">
+                <mat-header-cell *matHeaderCellDef> Conceptos de Retencion
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.conceptos}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="baseUVT">
+                <mat-header-cell *matHeaderCellDef> Base en UVT</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.baseUVT}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="basePesos">
+                <mat-header-cell *matHeaderCellDef> Base en Pesos
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.basePesos}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="tarifaRetencion">
+                <mat-header-cell *matHeaderCellDef> Tarifa de Retencion
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.tarifaRetencion}}
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones">
+                <th style="margin-top: 33px;" mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td mat-cell
+                    *matCellDef="let element">
+                    <mat-icon style="margin-top: 33px;"
+                        [color]="element.billingNumber ? 'primary' : 'success'"
+                        (click)="accion1(element)"
+                        title="Editar">description</mat-icon>
+                    <mat-icon
+                        [color]="element.billingNumber ? 'primary' : 'success'"
+                        (click)="accion2(element)"
+                        title="Agregar">create</mat-icon>
+                    <mat-icon
+                        [color]="element.billingNumber ? 'primary' : 'success'"
+                        (click)="accion3(element)"
+                        title="Borrar">delete_forever</mat-icon>
+                </td>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="rcols"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: rcols;"></mat-row>
+        </mat-table>
+    </div>
+</div>
+
+<!--Rete Iva-->
+<div class="rete-iva">
+    <h2 mat-dialog-title>Rete IVA</h2>
+</div>
+
+<!--Rete Iva-->
+<div class="rete-ica">
+    <h2 mat-dialog-title>Rete ICA</h2>
+</div>

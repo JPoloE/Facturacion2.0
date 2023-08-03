@@ -17,19 +17,28 @@
 
   <ng-container *ngIf="selectedOption === 'Persona Juridica'">
     <mat-form-field style="margin-right: 20px;">
-      <input matInput placeholder="*Razon Social">
+      <mat-label>
+        Razon Social
+      </mat-label>
+      <input matInput placeholder="Ingresar razon social">
     </mat-form-field>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Juridica'">
     <mat-form-field>
-      <input matInput placeholder="*NIT">
+      <mat-label>
+        NIT
+      </mat-label>
+      <input matInput placeholder="Ingresar NIT">
     </mat-form-field><br>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Juridica'">
     <mat-form-field>
-      <input matInput placeholder="*Correo Fact">
+      <mat-label>
+        Correo Fact
+      </mat-label>
+      <input matInput placeholder="Ingresar Correo Fact">
     </mat-form-field><br>
   </ng-container>
 
@@ -45,25 +54,41 @@
 
   <ng-container *ngIf="selectedOption === 'Persona Juridica'">
     <mat-form-field>
-      <input matInput placeholder="*Direccion">
+      <mat-label>
+        Dirección
+      </mat-label>
+      <input matInput placeholder="Ingresar dirección">
     </mat-form-field><br>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Juridica'">
     <mat-form-field style="margin-right: 20px;">
-      <input matInput placeholder="*Telefono">
+      <mat-label>
+        <mat-icon>
+          phone
+        </mat-icon>
+      </mat-label>
+      <input matInput placeholder="Ingresar Telefono">
     </mat-form-field>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Juridica'">
     <mat-form-field>
-      <input matInput placeholder="*Celular">
+      <mat-label>
+        <mat-icon>
+          smartphone
+        </mat-icon>
+      </mat-label>
+      <input matInput placeholder="Ingresar Celular">
     </mat-form-field><br>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Juridica'">
     <mat-form-field>
-      <input matInput placeholder="Contacto">
+      <mat-label>
+        Contacto
+      </mat-label>
+      <input matInput placeholder="Ingresar Contacto">
     </mat-form-field><br>
   </ng-container>
 
@@ -71,13 +96,19 @@
 
   <ng-container *ngIf="selectedOption === 'Persona Natural'">
     <mat-form-field style="margin-right: 20px;">
-      <input matInput placeholder="Nombres">
+      <mat-label>
+        Nombres
+      </mat-label>
+      <input matInput placeholder="Ingresar Nombres">
     </mat-form-field>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Natural'">
     <mat-form-field>
-      <input matInput placeholder="Apellidos">
+      <mat-label>
+        Apellidos
+      </mat-label>
+      <input matInput placeholder="Ingresar Apellidos">
     </mat-form-field><br>
   </ng-container>
 
@@ -93,14 +124,21 @@
 
   <ng-container *ngIf="selectedOption === 'Persona Natural'">
     <mat-form-field>
-      <input matInput placeholder="Numero de documento">
+      <mat-label>
+        # de Documento
+      </mat-label>
+      <input matInput placeholder="Ingresar Numero de documento">
+
     </mat-form-field><br>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Natural'">
     <mat-form-field>
+      <mat-label>
+        Correo
+      </mat-label>
       <input type="email" [formControl]="emailFormControl"
-        [errorStateMatcher]="matcher" matInput placeholder="Correo">
+        [errorStateMatcher]="matcher" matInput placeholder="Ingresar correo">
     </mat-form-field><br>
   </ng-container>
 
@@ -116,25 +154,37 @@
 
   <ng-container *ngIf="selectedOption === 'Persona Natural'">
     <mat-form-field>
-      <input matInput placeholder="*Direccion">
+      <mat-label>
+        Direccion
+      </mat-label>
+      <input matInput placeholder="Ingresar Direccion">
     </mat-form-field><br>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Natural'">
     <mat-form-field style="margin-right: 20px;">
-      <input matInput placeholder="*Telefono">
+      <mat-label>
+        <mat-icon>phone</mat-icon>
+      </mat-label>
+      <input matInput placeholder="Ingresar telefono">
     </mat-form-field>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Natural'">
     <mat-form-field>
-      <input class="long-input" matInput placeholder="*Celular">
+      <mat-label>
+        <mat-icon>smartphone</mat-icon>
+      </mat-label>
+      <input class="long-input" matInput placeholder="Ingresar celular">
     </mat-form-field><br>
   </ng-container>
 
   <ng-container *ngIf="selectedOption === 'Persona Natural'">
     <mat-form-field>
-      <textarea matInput placeholder="Contacto"></textarea>
+      <mat-label>
+        Contacto
+      </mat-label>
+      <input matInput placeholder="Ingresar Contacto">
     </mat-form-field><br>
   </ng-container>
 
