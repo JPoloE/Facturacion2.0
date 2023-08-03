@@ -76,15 +76,15 @@
                 <td mat-cell
                     *matCellDef="let element">
                     <mat-icon style="margin-top: 33px;"
-                        [color]="element.billingNumber ? 'primary' : 'success'"
+                        color="primary"
                         (click)="accion1(element)"
-                        title="Editar">description</mat-icon>
+                        title="Editar">create</mat-icon>
                     <mat-icon
-                        [color]="element.billingNumber ? 'primary' : 'success'"
+                        color="primary"
                         (click)="accion2(element)"
-                        title="Agregar">create</mat-icon>
+                        title="Agregar">add</mat-icon>
                     <mat-icon
-                        [color]="element.billingNumber ? 'primary' : 'success'"
+                        color="primary"
                         (click)="accion3(element)"
                         title="Borrar">delete_forever</mat-icon>
                 </td>
@@ -98,9 +98,119 @@
 <!--Rete Iva-->
 <div class="rete-iva">
     <h2 mat-dialog-title>Rete IVA</h2>
+    <div class="tabler">
+        <mat-table [dataSource]="dataiva" class="mat-elevation-z8">
+            <!-- Position Column -->
+            <ng-container matColumnDef="conceptos">
+                <mat-header-cell *matHeaderCellDef> Conceptos de Retencion
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.conceptos}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="baseUVT">
+                <mat-header-cell *matHeaderCellDef> Base en UVT</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.baseUVT}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="basePesos">
+                <mat-header-cell *matHeaderCellDef> Base en Pesos
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.basePesos}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="tarifaRetencion">
+                <mat-header-cell *matHeaderCellDef> Tarifa de Retencion
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.tarifaRetencion}}
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones">
+                <th style="margin-top: 33px;" mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td mat-cell
+                    *matCellDef="let element">
+                    <mat-icon style="margin-top: 33px;"
+                        color="primary"
+                        (click)="accion1(element)"
+                        title="Editar">create</mat-icon>
+                    <mat-icon
+                        color="primary"
+                        (click)="accion2(element)"
+                        title="Agregar">add</mat-icon>
+                    <mat-icon
+                        color="primary"
+                        (click)="accion3(element)"
+                        title="Borrar">delete_forever</mat-icon>
+                </td>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="ivacols"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ivacols;"></mat-row>
+        </mat-table>
+    </div>
 </div>
 
-<!--Rete Iva-->
+<!--Rete Ica-->
 <div class="rete-ica">
     <h2 mat-dialog-title>Rete ICA</h2>
+    <div class="tabler">
+        <mat-table [dataSource]="dataica" class="mat-elevation-z8">
+            <!-- Position Column -->
+            <ng-container matColumnDef="conceptos">
+                <mat-header-cell *matHeaderCellDef> Conceptos de Retencion
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.conceptos}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="baseUVT">
+                <mat-header-cell *matHeaderCellDef> Base en UVT</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.baseUVT}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="basePesos">
+                <mat-header-cell *matHeaderCellDef> Base en Pesos
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.basePesos}}
+                </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="tarifaRetencion">
+                <mat-header-cell *matHeaderCellDef> Tarifa de Retencion
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.tarifaRetencion}}
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones">
+                <th style="margin-top: 33px;" mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td mat-cell
+                    *matCellDef="let element">
+                    <mat-icon style="margin-top: 33px;"
+                        color="primary"
+                        (click)="accion1(element)"
+                        title="Editar">create</mat-icon>
+                    <mat-icon
+                        color="primary"
+                        (click)="accion2(element)"
+                        title="Agregar">add</mat-icon>
+                    <mat-icon
+                        color="primary"
+                        (click)="accion3(element)"
+                        title="Borrar">delete_forever</mat-icon>
+                </td>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="icacols"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: icacols;"></mat-row>
+        </mat-table>
+    </div>
 </div>

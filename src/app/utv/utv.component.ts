@@ -29,7 +29,33 @@ const datosr: RFuente[] = [
   {conceptos: 'Servicio de transporte de carga', baseUVT:412, basePesos: 20, tarifaRetencion:10},
 ];
 
+//Tabla 3
 
+export interface Riva{
+  conceptos: string;
+  baseUVT: number;
+  basePesos: number;
+  tarifaRetencion: number;
+}
+
+const datosiva: Riva[] = [
+  {conceptos: 'Compras generales (declarantes)', baseUVT:412, basePesos: 20, tarifaRetencion:10},
+  {conceptos: 'Compras generales (no declarantes)', baseUVT:412, basePesos: 20, tarifaRetencion:10},
+];
+
+//Tabla 4
+
+export interface Rica{
+  conceptos: string;
+  baseUVT: number;
+  basePesos: number;
+  tarifaRetencion: number;
+}
+
+const datosica: Rica[] = [
+  {conceptos: 'Compras generales (declarantes)', baseUVT:412, basePesos: 20, tarifaRetencion:10},
+  {conceptos: 'Compras generales (no declarantes)', baseUVT:412, basePesos: 20, tarifaRetencion:10},
+];
 
 @Component({
   selector: 'app-utv',
@@ -59,4 +85,12 @@ export class UtvComponent {
     console.log('Botón 3 pulsado en la fila:', row);
   }
 
+  //Tabla 3
+  ivacols: string[] = ['conceptos', 'baseUVT', 'basePesos', 'tarifaRetencion', "acciones"];
+  dataiva = datosiva;
+
+  //Tabla 4
+  icacols: string[] = ['conceptos', 'baseUVT', 'basePesos', 'tarifaRetencion', "acciones"];
+  dataica = datosica;
+  
 }
